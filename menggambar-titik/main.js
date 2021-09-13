@@ -16,6 +16,9 @@ function main() {
     }
     `;
 
+    /**
+     * @type {WebGLShader} vertexShader
+     */
     var vertexShader = context.createShader(context.VERTEX_SHADER);
     context.shaderSource(vertexShader, vertexShaderCode);
     context.compileShader(vertexShader);
@@ -26,10 +29,16 @@ function main() {
     }
     `;
 
+    /**
+     * @type {WebGLShader} fragmentShader
+     */
     var fragmentShader = context.createShader(context.FRAGMENT_SHADER);
     context.shaderSource(fragmentShader, fragmentShaderCode);
     context.compileShader(fragmentShader);
 
+    /**
+     * @type {WebGLProgram} shaderProgram
+     */
     var shaderProgram = context.createProgram();
     context.attachShader(shaderProgram, vertexShader);
     context.attachShader(shaderProgram, fragmentShader);
